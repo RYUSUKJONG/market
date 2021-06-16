@@ -4,15 +4,18 @@ Ext.define('Study.view.product.ProductList', {
 	title: '상품목록',
 	items: [{
 		xtype: 'toolbar',
-		items : [{
-			xtype : 'textfield'
-		},{
-			xtype : 'numberfield'
-		},{
-			xtype : 'numberfield'
-		},{
-			xtype : 'button',
-			text : '등록'
+		items: [{
+			xtype: 'textfield',
+			fieldLabel : '상품명'
+		}, {
+			xtype: 'numberfield',
+			fieldLabel : '가격'
+		}, {
+			xtype: 'numberfield',
+			fieldLabel : '재고량'
+		}, {
+			xtype: 'button',
+			text: '등록'
 		}]
 	}, {
 		xtype: 'grid',
@@ -51,10 +54,20 @@ Ext.define('Study.view.product.ProductList', {
 				price: 500,
 				amount: 100,
 				rgstrDt: new Date()
+			}, {
+				productNm: '지우개',
+				price: 500,
+				amount: 100,
+				rgstrDt: new Date()
+			}, {
+				productNm: '지우개',
+				price: 500,
+				amount: 100,
+				rgstrDt: new Date()
 			}]
 		}
 	}],
-    /*tbar : [{  //toolbar
+	/*tbar : [{  //toolbar
 		xtype : 'textfield'
 	},{
 		xtype : 'numberfield'
@@ -64,7 +77,4 @@ Ext.define('Study.view.product.ProductList', {
 		xtype : 'button',
 		text : '등록'
 	}],*/
-    width : 500,
-    height : 500,
-    html : 'product list'
 });
