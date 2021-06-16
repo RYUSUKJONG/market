@@ -1,17 +1,17 @@
 Ext.define('Study.view.member.MemberList', {
-    extend: 'Ext.grid.Panel',
-    xtype : 'memberList',
-	title : '회원목록',
+	extend: 'Ext.grid.Panel',
+	xtype: 'memberList',
+	title: '회원목록',
 	columnLines: true,
 	tbar: [{
-		xtype : 'combo',
-		displayField : 'a',
-		valueField : 'b',
-		store : {
-			fields : ['a', 'b'],
-			data : [{
-				a : 'a',
-				b : 'b'
+		xtype: 'combo',
+		displayField: 'a',
+		valueField: 'b',
+		store: {
+			fields: ['a', 'b'],
+			data: [{
+				a: 'a',
+				b: 'b'
 			}]
 		}
 	}, {
@@ -23,7 +23,7 @@ Ext.define('Study.view.member.MemberList', {
 	}],
 	columns: [{
 		xtype: 'rownumberer',
-	},	{
+	}, {
 		text: '상품명',
 		flex: 1,
 		dataIndex: 'productNm'
@@ -58,5 +58,10 @@ Ext.define('Study.view.member.MemberList', {
 			amount: 100,
 			rgstrDt: new Date()
 		}]
+	},
+	bbar: {
+		xtype: 'pagingtoolbar',
+		plugins : 'ux-slidingpager',
+		displayInfo: true
 	}
 });

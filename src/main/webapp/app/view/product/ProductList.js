@@ -6,13 +6,13 @@ Ext.define('Study.view.product.ProductList', {
 		xtype: 'toolbar',
 		items: [{
 			xtype: 'textfield',
-			fieldLabel : '상품명'
+			fieldLabel: '상품명'
 		}, {
 			xtype: 'numberfield',
-			fieldLabel : '가격'
+			fieldLabel: '가격'
 		}, {
 			xtype: 'numberfield',
-			fieldLabel : '재고량'
+			fieldLabel: '재고량'
 		}, {
 			xtype: 'button',
 			text: '등록'

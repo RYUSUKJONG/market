@@ -1,17 +1,17 @@
 Ext.define('Study.view.order.OrderList', {
 	extend: 'Ext.grid.Panel',
 	xtype: 'orderList',
-	title : '주문목록',
+	title: '주문목록',
 	columnLines: true,
 	tbar: [{
-		xtype : 'combo',
-		displayField : 'a',
-		valueField : 'b',
-		store : {
-			fields : ['a', 'b'],
-			data : [{
-				a : 'a',
-				b : 'b'
+		xtype: 'combo',
+		displayField: 'a',
+		valueField: 'b',
+		store: {
+			fields: ['a', 'b'],
+			data: [{
+				a: 'a',
+				b: 'b'
 			}]
 		}
 	}, {
@@ -23,7 +23,7 @@ Ext.define('Study.view.order.OrderList', {
 	}],
 	columns: [{
 		xtype: 'rownumberer',
-	},	{
+	}, {
 		text: '상품명',
 		flex: 1,
 		dataIndex: 'productNm'
@@ -58,5 +58,9 @@ Ext.define('Study.view.order.OrderList', {
 			amount: 100,
 			rgstrDt: new Date()
 		}]
+	},
+	bbar: {
+		xtype: 'pagingtoolbar',
+		displayInfo: true
 	}
 });
