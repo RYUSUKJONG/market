@@ -5,7 +5,24 @@ Ext.define('Study.view.main.Main', {
     items : [{
 		xtype : 'panel',
 		region : 'north',
-		title : 'Market Admin'
+		//title : 'Market Admin'
+		title : '',
+		header : false,
+		items : [{
+			xtype : 'toolbar',
+			items : [{
+				xtype : 'label',
+				html : '<h2>Market Admin</h2>'
+			},'->',{
+				xtype : 'button',
+				text : 'xxx님',
+				menu : [{
+					text : '비밀번호 변경'
+				},{
+					text : '로그아웃'
+				}]
+			}]
+		}]
 	},{
 		xtype : 'panel',
 		split : true,
@@ -14,6 +31,15 @@ Ext.define('Study.view.main.Main', {
 		region : 'west',
 		items : [{
 			xtype : 'treelist',
+			listeners : {
+				selectionchange : function(obj, record) {
+					var centerPage = obj.up("viewport").down("component[region=center]");
+					centerPage.removeAll(true);
+					centerPage.add({
+						xtype : record.get("page")
+					})
+				}
+			},
 			store : {
 				root : {
 					expanded : true,
@@ -24,6 +50,7 @@ Ext.define('Study.view.main.Main', {
 						selectable : false,
 						children : [{
 							text : '상품목록',
+							page : 'productList',
 							leaf : true
 						}]
 					},{
@@ -33,7 +60,8 @@ Ext.define('Study.view.main.Main', {
 
 						selectable : false,
 						children : [{
-							text : '상품목록',
+							text : '주문목록',
+							page : 'orderList',
 							leaf : true
 						}]
 					},{
@@ -43,6 +71,7 @@ Ext.define('Study.view.main.Main', {
 						selectable : false,
 						children : [{
 							text : '상품목록',
+							page : 'memberList',
 							leaf : true
 						}]
 					}]
