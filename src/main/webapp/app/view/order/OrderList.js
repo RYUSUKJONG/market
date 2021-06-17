@@ -39,6 +39,17 @@ Ext.define('Study.view.order.OrderList', {
 		text: '등록일',
 		flex: 1,
 		dataIndex: 'rgstrDt'
+	},{
+		xtype: 'widgetcolumn',
+		widget : {
+			xtype : 'button',
+			text : '배송정보',
+			handler : function(btn){
+				var record = btn.getWidgetRecord(); // 클릭한 버튼의 레코드값
+				console.log(record.get("amount"));
+				console.log(record.get("price"));
+			}
+		}
 	}],
 	store: {
 		fields: ['productNm', 'price', 'amount', 'rgstrDt'],

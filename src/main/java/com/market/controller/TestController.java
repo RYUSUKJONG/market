@@ -24,7 +24,7 @@ public class TestController {
 		return result;
 	}
 	
-	@RequestMapping(value="/getList")
+	//@RequestMapping(value="/getList")
 	public List<Map<String, Object>> getList() {
 		Map<String, Object> result = new HashMap<String, Object>();
 		List<Map<String, Object>> list = null;

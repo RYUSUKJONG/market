@@ -3,6 +3,7 @@ Ext.define('Study.view.member.MemberList', {
 	xtype: 'memberList',
 	title: '회원목록',
 	columnLines: true,
+	plugins : 'cellediting',
 	tbar: [{
 		xtype: 'combo',
 		displayField: 'a',
@@ -26,15 +27,24 @@ Ext.define('Study.view.member.MemberList', {
 	}, {
 		text: '상품명',
 		flex: 1,
-		dataIndex: 'productNm'
+		dataIndex: 'productNm',
+		editor : {
+			xtype : 'textfield'
+		}
 	}, {
 		text: '가격',
 		flex: 1,
-		dataIndex: 'price'
+		dataIndex: 'price',
+		editor : {
+			xtype : 'numberfield'
+		}
 	}, {
 		text: '재고량',
 		flex: 1,
-		dataIndex: 'amount'
+		dataIndex: 'amount',
+		editor : {
+			xtype : 'numberfield'
+		}
 	}, {
 		text: '등록일',
 		flex: 1,

@@ -1,6 +1,10 @@
 Ext.define('Study.view.main.Main', {
     extend: 'Ext.container.Viewport',
     xtype: 'main',
+    name : 'Main',
+    controllers: [
+       'MvcController'
+    ],
     layout : 'border',
     items : [{
 		xtype : 'panel',
@@ -17,9 +21,16 @@ Ext.define('Study.view.main.Main', {
 				xtype : 'button',
 				text : 'xxx님',
 				menu : [{
-					text : '비밀번호 변경'
+					text : '비밀번호 변경',
+					handler : function(btn){
+						Ext.widget("updatePassword");
+					}					
 				},{
-					text : '로그아웃'
+					text : '로그아웃',
+					handler : function(btn){
+						btn.up("viewport").destory();  //뷰포트 삭제
+						Ext.widget("login");
+					}
 				}]
 			}]
 		}]
@@ -70,7 +81,7 @@ Ext.define('Study.view.main.Main', {
 						expanded : true,
 						selectable : false,
 						children : [{
-							text : '상품목록',
+							text : '회원목록',
 							page : 'memberList',
 							leaf : true
 						}]
@@ -87,6 +98,8 @@ Ext.define('Study.view.main.Main', {
 		items : [{
 			xtype : 'panel',
 			html : "<h2>Main DashBoard</h2>"
+		},{
+			
 		}]		
 	}]
 
